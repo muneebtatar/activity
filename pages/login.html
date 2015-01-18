@@ -1,0 +1,19 @@
+    <ion-header-bar class="bar-light" style="background: black;">
+        <h1 class="title montserrat" style="color: white;">LOGIN</h1>
+        <div class="buttons">
+            <button class="button button-stable button-clear" ui-sref="landing" style="color: white;">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="true" scrolling="true" class="has-header" ng-controller="loginCtrl">
+        <form ng-submit="login();">
+        <ion-list>
+            <label class="item item-input">
+                <input type="email" placeholder="Email" ng-model="email">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="password">
+            </label>
+        </ion-list>
+        <input type="submit" class="button button-light button-block" value="Login">
+        </form>
+    </ion-content>

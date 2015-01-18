@@ -1,0 +1,33 @@
+    <ion-header-bar class="bar-light" style="background: black;" ng-controller="headerCtrl">
+        <h1 class="title montserrat" style="color: white;">HOME</h1>
+         <div class="buttons">
+            <button class="button button-stable button-clear" ng-click="logout();" style="color: white;">Logout</button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="true" scrolling="true" class="has-header" ng-controller="homeCtrl">
+            <div class="card">
+                <div class="item item-divider" style="background: transparent;">What are you doing now?</div>
+                      <label class="item item-input item-select">
+    <select style="position: relative; max-width: 100%; width: 100%; direction: ltr; padding: 10px;" ng-model="activity" ng-change="selected();">
+      <option>Camping.</option>
+      <option>Programming.</option>
+      <option>Eating dinner.</option>
+      <option>Having fun at the beach.</option>
+      <option>Sleeping.</option>
+      <option>Travelling.</option>
+      <option>At the sea.</option>
+      <option>Cooking.</option>
+      <option>Going on a rampage as a zombie.</option>
+    </select>
+  </label>
+            </div>
+        
+            <hr>
+                <div class="card" data-ng-repeat="actvity in activitesList | reverse">
+                    <center>
+                        <img src="{{actvity.avtivityImg}}" style="max-width: 45%; margin-top: 14px;">
+                        <p style="font-size: 15px; margin-top: 10px;">{{actvity.name}} is {{actvity.activity}}</p>
+                        <p ng-bind="getWhen({{actvity.when}});"></p>
+                    </center>
+                </div>
+    </ion-content>
